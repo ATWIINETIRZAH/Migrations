@@ -23,12 +23,16 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const studentRoutes = require("./routes/StudentRoutes"); 
 const courseRoutes = require("./routes/courseroutes");
+const teacherRoutes = require("./routes/teacherroutes");
+
+
 
 
 const app = express();
 app.use(bodyParser.json()); // Middleware for JSON requests
 app.use("/api/students", studentRoutes); 
 app.use("/api", courseRoutes);
+app.use("/api", teacherRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => {
