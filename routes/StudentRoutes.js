@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express. Router();
-const { Student } = require(" .. /models");
+const { Student } = require("../models");
 
 // Create a student
 router.post("/students", async (req, res) => {
@@ -12,7 +12,7 @@ res.status(201).json(student);
 
 // Get all students
 router.get("/students", async (req, res) => {
-const students = await Student.findA11();
+const students = await Student.findAll();
 res.json(students);
 });
 
